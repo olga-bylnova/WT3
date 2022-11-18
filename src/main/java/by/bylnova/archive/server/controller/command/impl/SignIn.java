@@ -8,9 +8,10 @@ import by.bylnova.archive.server.service.factory.ServiceFactory;
 public class SignIn implements Command {
     @Override
     public String execute(String request) {
-        String login = null;
-        String password = null;
-        String response = null;
+        String[] splitString = request.split(request);
+        String login = splitString[1];
+        String password = splitString[2];
+        String response;
         // get parameters from request and initialize the variables login and password
         ServiceFactory serviceFactory = ServiceFactory.getInstance();
         UserService clientService = serviceFactory.getUserService();

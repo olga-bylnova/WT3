@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<userList>
+    <user>
+        <login>olbs</login>
+        <password>123</password>
+        <userRole>USER</userRole>
+    </user>
+    <user>
+        <login>kol</login>
+        <password>123</password>
+        <userRole>USER</userRole>
+    </user>
+    <user>
+        <login>bol</login>
+        <password>123</password>
+        <userRole>USER</userRole>
+    </user>
+</userList>

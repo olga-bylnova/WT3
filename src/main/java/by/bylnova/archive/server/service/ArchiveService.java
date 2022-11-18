@@ -9,4 +9,5 @@ public interface ArchiveService {
     void addNewDocument(Document document) throws ServiceException;
     void addEditedDocument(Document document) throws ServiceException;
     List<Document> listAllDocuments() throws ServiceException;
+    void deleteDocument(long id) throws ServiceException;
 }
