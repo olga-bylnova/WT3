@@ -17,7 +17,11 @@ public final class Controller {
         String commandName;
         Command executionCommand;
         char paramDelimiter = ' ';
-        commandName = request.substring(0, request.indexOf(paramDelimiter));
+        if (request.contains(" ")) {
+            commandName = request.substring(0, request.indexOf(paramDelimiter));
+        } else {
+            commandName = request;
+        }
         executionCommand = provider.getCommand(commandName);
         String response;
         response = executionCommand.execute(request);

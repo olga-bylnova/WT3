@@ -31,12 +31,13 @@ public class XmlUserDAO implements UserDAO {
     }
 
     @Override
-    public boolean signIn(String login, String password) throws DAOException {
+    public boolean signIn(User user) throws DAOException {
         try {
             UserList users = getUserList();
-            for (User user : users.getUsers()) {
-                if (user.getLogin().equals(login) &&
-                        user.getPassword().equals(password))
+            for (User user1 : users.getUsers()) {
+                if (user1.getLogin().equals(user.getLogin()) &&
+                        user1.getPassword().equals(user.getPassword()) &&
+                        user1.getUserRole().equals(user.getUserRole()))
                     return true;
             }
         } catch (JAXBException e) {

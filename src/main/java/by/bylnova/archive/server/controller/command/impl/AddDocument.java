@@ -9,7 +9,7 @@ import by.bylnova.archive.server.service.factory.ServiceFactory;
 public class AddDocument implements Command {
     @Override
     public String execute(String request) {
-        String[] splitString = request.split(request);
+        String[] splitString = request.split(" ");
         long id = Long.parseLong(splitString[1]);
         String name = splitString[2];
         String response;

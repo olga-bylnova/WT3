@@ -5,12 +5,13 @@ import by.bylnova.archive.server.controller.Controller;
 import java.io.*;
 import java.net.ServerSocket;
 import java.net.Socket;
+import java.util.Scanner;
 
 public class ArchiveServer {
     private static Socket clientSocket;
     private static ServerSocket server;
-    private static BufferedReader in;
-    private static BufferedWriter out;
+    private static Scanner in;
+    private static PrintWriter out;
     private static Controller controller = Controller.getInstance();
 
     public static void main(String[] args) {
@@ -19,19 +20,19 @@ public class ArchiveServer {
                 server = new ServerSocket(8082);
                 clientSocket = server.accept();
                 try {
-                    in = new BufferedReader(new InputStreamReader(clientSocket.getInputStream()));
-                    out = new BufferedWriter(new OutputStreamWriter(clientSocket.getOutputStream()));
+                    in = new Scanner(clientSocket.getInputStream());
+                    out = new PrintWriter(clientSocket.getOutputStream());
 
-                    String request = in.readLine();
+                    String request = in.nextLine();
                     String response;
                     while (request != null) {
                         System.out.println(request);
 
                         response = controller.executeTask(request);
 
-                        out.write(response);
+                        out.println(response);
                         out.flush();
-                        request = in.readLine();
+                        request = in.nextLine();
                     }
 
                 } finally {

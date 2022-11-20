@@ -16,7 +16,7 @@ public class ListDocuments implements Command {
         try {
             var documentList = archiveService.listAllDocuments();
             documentList
-                    .forEach(document -> response[0] += document.toString() + "\n");
+                    .forEach(document -> response[0] += document.toString() + " ");
             return response[0];
         } catch (ServiceException e) {
             // write log

@@ -3,12 +3,12 @@
     <user>
         <login>olbs</login>
         <password>123</password>
-        <userRole>USER</userRole>
+        <userRole>user</userRole>
     </user>
     <user>
         <login>kol</login>
         <password>123</password>
-        <userRole>USER</userRole>
+        <userRole>user</userRole>
     </user>
     <user>
         <login>bol</login>

@@ -4,6 +4,6 @@ import by.bylnova.archive.server.bean.User;
 import by.bylnova.archive.server.dao.exception.DAOException;
 
 public interface UserDAO {
-    boolean signIn(String login, String password) throws DAOException;
+    boolean signIn(User user) throws DAOException;
     void registration(User user) throws DAOException;
 }
